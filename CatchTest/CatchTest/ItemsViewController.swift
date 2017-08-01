@@ -9,13 +9,17 @@
 import UIKit
 
 class ItemsViewController: UIViewController {
+    @IBOutlet private weak var tableView: UITableView!
+    
+    var manager: ItemsViewControllerManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*NetworkAssistant.shared.fetchItems(from: itemsURL) { (items) in
-            print(items)
-        }*/
+        manager = ItemsViewControllerManager(tableView: tableView)
+        tableView.delegate = manager
+        tableView.dataSource = manager
+        manager?.fetchItems()
     }
 
 }

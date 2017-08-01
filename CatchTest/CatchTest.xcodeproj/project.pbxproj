@@ -19,6 +19,7 @@
 		127CCFE81F312A3F003F979F /* badJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 127CCFE51F312A3F003F979F /* badJSON.json */; };
 		127CCFE91F312A3F003F979F /* goodJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 127CCFE61F312A3F003F979F /* goodJSON.json */; };
 		127CCFEA1F312A3F003F979F /* evenWorseJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 127CCFE71F312A3F003F979F /* evenWorseJSON.json */; };
+		127CCFEE1F3136CD003F979F /* ItemsViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CCFED1F3136CD003F979F /* ItemsViewControllerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		127CCFE51F312A3F003F979F /* badJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = badJSON.json; sourceTree = "<group>"; };
 		127CCFE61F312A3F003F979F /* goodJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goodJSON.json; sourceTree = "<group>"; };
 		127CCFE71F312A3F003F979F /* evenWorseJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = evenWorseJSON.json; sourceTree = "<group>"; };
+		127CCFED1F3136CD003F979F /* ItemsViewControllerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsViewControllerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 			children = (
 				127CCFB61F3117B3003F979F /* Main.storyboard */,
 				127CCFD41F31184E003F979F /* ItemsViewController.swift */,
+				127CCFED1F3136CD003F979F /* ItemsViewControllerManager.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				127CCFB31F3117B3003F979F /* AppDelegate.swift in Sources */,
+				127CCFEE1F3136CD003F979F /* ItemsViewControllerManager.swift in Sources */,
 				127CCFDA1F31195D003F979F /* NetworkAssistant.swift in Sources */,
 				127CCFD71F3118E3003F979F /* Item.swift in Sources */,
 				127CCFD51F31184E003F979F /* ItemsViewController.swift in Sources */,
@@ -460,6 +464,7 @@
 				127CCFCE1F3117B3003F979F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		127CCFCF1F3117B3003F979F /* Build configuration list for PBXNativeTarget "CatchTestTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +473,7 @@
 				127CCFD11F3117B3003F979F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
