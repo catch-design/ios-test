@@ -8,20 +8,19 @@
 
 import UIKit
 
+protocol ItemsManagerProtocol: class {
+    func itemsDidUpdate()
+    func userDidSelect(_ item: Item)
+}
+
 class ItemsViewControllerManager: NSObject {
     var items = [Item]() {
         didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+            delegate?.itemsDidUpdate()
         }
     }
     
-    fileprivate let tableView: UITableView
-    
-    init(tableView: UITableView) {
-        self.tableView = tableView
-    }
+    weak var delegate: ItemsManagerProtocol?
     
     func fetchItems() {
         NetworkAssistant.shared.fetchItems(from: itemsURL) { (items) in
@@ -34,7 +33,9 @@ class ItemsViewControllerManager: NSObject {
 }
 
 extension ItemsViewControllerManager: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.userDidSelect(items[indexPath.row])
+    }
 }
 
 extension ItemsViewControllerManager: UITableViewDataSource {
