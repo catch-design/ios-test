@@ -19,6 +19,17 @@ class DetailViewController: UIViewController {
 
         navigationItem.title = item?.title
         detailDescriptionText.text = item?.content
+        detailDescriptionText.backgroundColor = UIColor(white: cellBackgroundColor, alpha: 0.97)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
     }
 
 

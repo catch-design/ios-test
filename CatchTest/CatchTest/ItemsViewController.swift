@@ -12,15 +12,33 @@ class ItemsViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
     
     var manager: ItemsViewControllerManager?
+    
+    private func registerNibs() {
+        tableView.register(UINib(nibName: "ItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ItemCell")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        registerNibs()
         manager = ItemsViewControllerManager()
         manager?.delegate = self
         tableView.delegate = manager
         tableView.dataSource = manager
         manager?.fetchItems()
+        
+        
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
