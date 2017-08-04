@@ -12,8 +12,8 @@ let cellBackgroundColor = CGFloat(190.0/255.0)
 
 class ItemTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var subtitleLabel: UILabel!
+    @IBOutlet fileprivate weak var titleLabel: UILabel!
+    @IBOutlet fileprivate weak var subtitleLabel: UILabel!
     
     var model: ItemCell? {
         didSet {

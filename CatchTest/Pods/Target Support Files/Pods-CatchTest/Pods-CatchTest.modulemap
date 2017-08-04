@@ -1,0 +1,6 @@
+framework module Pods_CatchTest {
+  umbrella header "Pods-CatchTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

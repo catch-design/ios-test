@@ -13,7 +13,7 @@ class ItemsViewController: UIViewController {
     
     var manager: ItemsViewControllerManager?
     
-    private func registerNibs() {
+    fileprivate func registerNibs() {
         tableView.register(UINib(nibName: "ItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ItemCell")
     }
 

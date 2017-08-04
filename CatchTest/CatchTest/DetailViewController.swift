@@ -10,7 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet private weak var detailDescriptionText: UITextView!
+    @IBOutlet fileprivate weak var detailDescriptionText: UITextView!
     
     var item: Item?
     

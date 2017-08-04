@@ -34,7 +34,7 @@ struct Item {
     }
     
     ///A map to the keys we need
-    private struct Key {
+    fileprivate struct Key {
         static let id = "id"
         static let title = "title"
         static let subtitle = "subtitle"
