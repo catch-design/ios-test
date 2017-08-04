@@ -25,6 +25,8 @@
 		127CCFF21F33B71D003F979F /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CCFF11F33B71D003F979F /* ItemTableViewCell.swift */; };
 		127CCFF41F33B739003F979F /* ItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127CCFF31F33B739003F979F /* ItemTableViewCell.xib */; };
 		127CCFF61F33B77D003F979F /* ItemCellManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CCFF51F33B77D003F979F /* ItemCellManager.swift */; };
+		127CCFF81F351F09003F979F /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CCFF71F351F09003F979F /* RefreshView.swift */; };
+		127CCFFA1F351F16003F979F /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 127CCFF91F351F16003F979F /* RefreshView.xib */; };
 		A259B9839D1C06E7DFF42209 /* Pods_CatchTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C2914D03C9B34C14A6B998 /* Pods_CatchTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,8 @@
 		127CCFF11F33B71D003F979F /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		127CCFF31F33B739003F979F /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemTableViewCell.xib; sourceTree = "<group>"; };
 		127CCFF51F33B77D003F979F /* ItemCellManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCellManager.swift; sourceTree = "<group>"; };
+		127CCFF71F351F09003F979F /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
+		127CCFF91F351F16003F979F /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		4A26549ACAD47FA83CF72841 /* Pods-CatchTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatchTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatchTest/Pods-CatchTest.debug.xcconfig"; sourceTree = "<group>"; };
 		5C6A5737DB56C11491AEC4A3 /* Pods-CatchTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatchTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CatchTestTests/Pods-CatchTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		668C4144274C641D3D8899DA /* Pods-CatchTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatchTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CatchTestTests/Pods-CatchTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 				127CCFF11F33B71D003F979F /* ItemTableViewCell.swift */,
 				127CCFF31F33B739003F979F /* ItemTableViewCell.xib */,
 				127CCFF51F33B77D003F979F /* ItemCellManager.swift */,
+				127CCFF71F351F09003F979F /* RefreshView.swift */,
+				127CCFF91F351F16003F979F /* RefreshView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,6 +288,7 @@
 				127CCFBD1F3117B3003F979F /* LaunchScreen.storyboard in Resources */,
 				127CCFBA1F3117B3003F979F /* Assets.xcassets in Resources */,
 				127CCFB81F3117B3003F979F /* Main.storyboard in Resources */,
+				127CCFFA1F351F16003F979F /* RefreshView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +408,7 @@
 				127CCFDA1F31195D003F979F /* NetworkAssistant.swift in Sources */,
 				127CCFF01F327ECF003F979F /* DetailViewController.swift in Sources */,
 				127CCFD71F3118E3003F979F /* Item.swift in Sources */,
+				127CCFF81F351F09003F979F /* RefreshView.swift in Sources */,
 				127CCFF21F33B71D003F979F /* ItemTableViewCell.swift in Sources */,
 				127CCFD51F31184E003F979F /* ItemsViewController.swift in Sources */,
 			);
