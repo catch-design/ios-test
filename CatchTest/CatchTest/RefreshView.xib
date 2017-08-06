@@ -35,7 +35,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="activityIndicatorView" destination="Qlf-eN-JKW" id="DFb-x3-nHS"/>
+                <outlet property="activityIndicatorView" destination="Qlf-eN-JKW" id="Hys-ED-SGF"/>
             </connections>
             <point key="canvasLocation" x="10" y="-251.5"/>
         </view>

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,18 +21,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2017-08-02 at 11.26.11 pm-1" translatesAutoresizingMaskIntoConstraints="NO" id="t69-dg-38S">
-                                <rect key="frame" x="20" y="260" width="335" height="146"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="t69-dg-38S" secondAttribute="height" multiplier="199:87" id="8cp-NL-cvM"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="t69-dg-38S">
+                                <rect key="frame" x="8" y="246" width="359" height="174"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t69-dg-38S" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4IC-Rf-7ZP"/>
-                            <constraint firstItem="t69-dg-38S" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="GFe-kr-Nue"/>
-                            <constraint firstAttribute="trailing" secondItem="t69-dg-38S" secondAttribute="trailing" constant="20" symbolic="YES" id="Tyx-v2-Y1x"/>
+                            <constraint firstItem="t69-dg-38S" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="GFe-kr-Nue"/>
+                            <constraint firstAttribute="trailing" secondItem="t69-dg-38S" secondAttribute="trailing" constant="8" id="Tyx-v2-Y1x"/>
                             <constraint firstItem="t69-dg-38S" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="rbH-gz-Nd4"/>
                         </constraints>
                     </view>
@@ -44,6 +40,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Screen Shot 2017-08-02 at 11.26.11 pm-1" width="398" height="174"/>
+        <image name="CatchLogo" width="398" height="174"/>
     </resources>
 </document>

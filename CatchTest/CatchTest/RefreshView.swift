@@ -13,10 +13,6 @@ class RefreshView: UIView {
     
     @IBOutlet fileprivate weak var activityIndicatorView: NVActivityIndicatorView!
     
-    /*func setupView() {
-        activityIndicatorView.type = .ballClipRotate
-    }*/
-    
     func startAnimating() {
         activityIndicatorView.startAnimating()
     }
@@ -24,5 +20,5 @@ class RefreshView: UIView {
     func stopAnimating() {
         activityIndicatorView.stopAnimating()
     }
-
+    
 }

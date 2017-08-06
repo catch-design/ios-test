@@ -10,7 +10,7 @@ import UIKit
 
 let cellBackgroundColor = CGFloat(190.0/255.0)
 
-class ItemTableViewCell: UITableViewCell {
+class ItemTableViewCell: UITableViewCell, ReuseIdenifier {
 
     @IBOutlet fileprivate weak var titleLabel: UILabel!
     @IBOutlet fileprivate weak var subtitleLabel: UILabel!
@@ -25,7 +25,6 @@ class ItemTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
         backgroundColor = UIColor(white: cellBackgroundColor, alpha: 0.97)
         accessoryView = UIImageView(image: #imageLiteral(resourceName: "disclosure"))
     }
@@ -36,6 +35,10 @@ class ItemTableViewCell: UITableViewCell {
         if selected {
             setSelected(false, animated: true)
         }
+    }
+    
+    static var reuseIdentifier: String {
+        return "ItemCell"
     }
 
 }

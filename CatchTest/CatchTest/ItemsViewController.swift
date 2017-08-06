@@ -7,32 +7,28 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ItemsViewController: UIViewController {
     @IBOutlet fileprivate weak var tableView: UITableView!
-    
     var manager: ItemsViewControllerManager?
     
     fileprivate let refreshControl = UIRefreshControl()
     fileprivate var customRefreshView: RefreshView!
     
     fileprivate func registerNibs() {
-        tableView.register(UINib(nibName: "ItemTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "ItemCell")
+        tableView.register(UINib(nibName: ItemTableViewCell.nibName, bundle: Bundle.main), forCellReuseIdentifier: ItemTableViewCell.reuseIdentifier)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNibs()
-        manager = ItemsViewControllerManager()
-        manager?.delegate = self
-        tableView.delegate = manager
-        tableView.dataSource = manager
-        manager?.fetchItems()
-        
-        
-        tableView.separatorStyle = .none
-        tableView.backgroundColor = .clear
-        
+        setupManager()
+        setupTableView()
+        setupRefreshControl()
+    }
+    
+    fileprivate func setupRefreshControl() {
         refreshControl.tintColor = .clear
         refreshControl.backgroundColor = .clear
         refreshControl.addTarget(self, action: #selector(ItemsViewController.refreshData(sender:)), for: .valueChanged)
@@ -44,15 +40,36 @@ class ItemsViewController: UIViewController {
         else {
             tableView.addSubview(refreshControl)
         }
+    }
+    
+    fileprivate func setupTableView() {
+        tableView.separatorStyle = .none
         
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "CatchLogo"))
+        imageView.contentMode = .scaleAspectFit
+        tableView.backgroundView = imageView
+        let viewsDictionary: [String: Any] = ["imageView": imageView]
+        NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[imageView]-|", options: [], metrics: nil, views: viewsDictionary))
+        NSLayoutConstraint.activate([NSLayoutConstraint(item: tableView, attribute: .centerY, relatedBy: .equal, toItem: imageView, attribute: .centerY, multiplier: 1, constant: 0)])
+    }
+    
+    fileprivate func setupManager() {
+        manager = ItemsViewControllerManager()
+        manager?.delegate = self
+        tableView.delegate = manager
+        tableView.dataSource = manager
+        manager?.fetchItems()
     }
     
     fileprivate func customizeRefreshControl() {
-        let customRefresh = Bundle.main.loadNibNamed("RefreshView", owner: self, options: nil)
-        customRefreshView = customRefresh?.first as? RefreshView
-        customRefreshView.frame = refreshControl.bounds
-        //customRefreshView.setupView()
-        refreshControl.addSubview(customRefreshView)
+        if let view: RefreshView = RefreshView.loadFromNib() {
+            customRefreshView = view
+            customRefreshView?.frame = refreshControl.bounds
+            refreshControl.addSubview(customRefreshView!)
+            let viewsDictionary: [String: Any] = ["customRefresh": customRefreshView]
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[customRefresh]|", options: [], metrics: nil, views: viewsDictionary))
+            NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[customRefresh]|", options: [], metrics: nil, views: viewsDictionary))
+        }
     }
     
     @objc private func refreshData(sender: Any?) {
@@ -66,16 +83,16 @@ class ItemsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Detail" {
             if let controller = segue.destination as? DetailViewController, let item = sender as? Item {
                 controller.item = item
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
