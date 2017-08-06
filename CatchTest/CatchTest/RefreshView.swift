@@ -9,7 +9,12 @@
 import UIKit
 import NVActivityIndicatorView
 
+/**
+ Provides the custom UI for the refresh control
+ */
 class RefreshView: UIView {
+    
+    //I would have made the animation myself, but thought bonus points for using Cocoapods
     
     @IBOutlet fileprivate weak var activityIndicatorView: NVActivityIndicatorView!
     

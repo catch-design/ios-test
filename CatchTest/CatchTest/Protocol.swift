@@ -8,15 +8,7 @@
 
 import UIKit
 
-protocol ViewLoading {
-    static func loadFromNib<T: NibName>() -> T?
-}
-
-extension ViewLoading {
-    static func loadFromNib<T: NibName>() -> T? {
-        return Bundle.main.loadNibNamed(T.nibName, owner: self, options: nil)?.first as? T
-    }
-}
+//I would be tempted to put a whole lot more here, i.e. horisontal communication, vertical communication, how we update model lists (because we are using value object, right), etc.
 
 protocol NibName {
     static var nibName: String { get }
@@ -28,8 +20,10 @@ extension NibName {
     }
 }
 
-extension UIView: ViewLoading, NibName {
-    
+extension UIView: NibName {
+    static func loadFromNib<T: NibName>() -> T? {
+        return Bundle.main.loadNibNamed(T.nibName, owner: self, options: nil)?.first as? T
+    }
 }
 
 protocol ReuseIdenifier {

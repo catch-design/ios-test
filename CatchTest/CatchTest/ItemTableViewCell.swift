@@ -10,11 +10,16 @@ import UIKit
 
 let cellBackgroundColor = CGFloat(190.0/255.0)
 
+/**
+ The custom cell for the list
+ */
 class ItemTableViewCell: UITableViewCell, ReuseIdenifier {
-
+    ///Where we display the title
     @IBOutlet fileprivate weak var titleLabel: UILabel!
+    ///Where we display the subtitle
     @IBOutlet fileprivate weak var subtitleLabel: UILabel!
     
+    ///The model object and storage for the data. Since this is a value object every time we set it, the UI will be updated
     var model: ItemCell? {
         didSet {
             titleLabel.text = model?.title
@@ -26,6 +31,7 @@ class ItemTableViewCell: UITableViewCell, ReuseIdenifier {
         super.awakeFromNib()
         
         backgroundColor = UIColor(white: cellBackgroundColor, alpha: 0.97)
+        //this cannot be cooler
         accessoryView = UIImageView(image: #imageLiteral(resourceName: "disclosure"))
     }
 

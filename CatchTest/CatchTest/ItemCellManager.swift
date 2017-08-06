@@ -13,9 +13,12 @@ protocol ItemCell {
     var subtitle: String { get }
 }
 
+/**
+ Provides storage for the cell. In real world scenario the majority of the I/O and state of the cell will be going through here
+ */
 struct ItemCellManager: ItemCell {
-    var title: String
-    var subtitle: String
+    let title: String
+    let subtitle: String
     
     init(item: Item) {
         self.title = item.title

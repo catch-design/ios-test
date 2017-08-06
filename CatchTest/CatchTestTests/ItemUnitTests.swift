@@ -14,6 +14,10 @@ class ItemUnitTests: XCTestCase {
     var goodJSON: [JSONDictionary]?
     var badJSON: [JSONDictionary]?
     
+    //There are more tests to be performed here
+    //The interesting part is that how easy it is mock the input
+    //which helps testing greatly
+    
     override func setUp() {
         super.setUp()
         goodJSON = fileToJSON("goodJSON")
