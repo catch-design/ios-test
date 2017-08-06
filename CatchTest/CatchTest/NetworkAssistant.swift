@@ -13,9 +13,22 @@ typealias JSONDictionary = [String: Any]
 
 let itemsURL = URL(string: "https://raw.githubusercontent.com/catchnz/ios-test/master/data/data.json")!
 
+/**
+ This is the network go-to if you want something from the web
+ */
 class NetworkAssistant {
+    //Needs to be accessible to all objects
+    //possibly maintain state, etc.
     static let shared = NetworkAssistant()
     
+    /**
+     This is how we request the items from the server. The closure gives us back an array of items ready to be given to whever needs them
+     
+     - Parameters:
+        - url: The url this request goes to
+        - completion: The closure we are given once the request returns
+     
+     */
     func fetchItems(from url: URL, completion: @escaping ([Item]?) -> ()) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if nil == error {

@@ -12,7 +12,7 @@
         <!--Items View Controller-->
         <scene sceneID="4iq-s5-AAp">
             <objects>
-                <viewController id="No5-8b-Wxd" customClass="ItemsViewController" customModule="CatchTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="No5-8b-Wxd" customClass="ItemsViewController" customModule="CatchTest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T1B-gW-GMl"/>
                         <viewControllerLayoutGuide type="bottom" id="hdo-sm-OK9"/>
@@ -21,22 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHk-MT-exz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="dv0-tt-20L">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dv0-tt-20L" id="IeF-FQ-4Se">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WHk-MT-exz">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WHk-MT-exz" firstAttribute="top" secondItem="T1B-gW-GMl" secondAttribute="bottom" id="4Hc-TD-NBu"/>
                             <constraint firstItem="WHk-MT-exz" firstAttribute="leading" secondItem="7xx-FZ-zUP" secondAttribute="leading" id="Wrj-AP-fbO"/>
@@ -45,10 +35,59 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kym-o6-Bh9"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="WHk-MT-exz" id="sAn-E2-tvt"/>
+                        <segue destination="0Tj-qs-Agz" kind="show" identifier="Detail" id="NLe-PJ-Zw5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTz-LF-hIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="213.59999999999999" y="107.49625187406298"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="RXA-yh-Yo3">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0Tj-qs-Agz" customClass="DetailViewController" customModule="CatchTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="49G-bb-XXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="J45-gd-nSc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="efn-bW-2s0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-rJ-dy9">
+                                <rect key="frame" x="20" y="246" width="335" height="174"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fpL-E8-cvH">
+                                <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                                <color key="backgroundColor" white="1" alpha="0.85955851510067116" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fpL-E8-cvH" firstAttribute="leading" secondItem="efn-bW-2s0" secondAttribute="leading" id="8SD-vr-l9H"/>
+                            <constraint firstItem="fpL-E8-cvH" firstAttribute="top" secondItem="49G-bb-XXb" secondAttribute="bottom" id="B5z-u9-ALQ"/>
+                            <constraint firstItem="J45-gd-nSc" firstAttribute="top" secondItem="fpL-E8-cvH" secondAttribute="bottom" id="KcF-yX-ANL"/>
+                            <constraint firstItem="nbn-rJ-dy9" firstAttribute="leading" secondItem="efn-bW-2s0" secondAttribute="leading" constant="20" symbolic="YES" id="MEh-Um-2cZ"/>
+                            <constraint firstAttribute="trailing" secondItem="fpL-E8-cvH" secondAttribute="trailing" id="fOw-RR-Fpv"/>
+                            <constraint firstAttribute="trailing" secondItem="nbn-rJ-dy9" secondAttribute="trailing" constant="20" symbolic="YES" id="gWI-0s-FmY"/>
+                            <constraint firstItem="nbn-rJ-dy9" firstAttribute="centerX" secondItem="efn-bW-2s0" secondAttribute="centerX" id="hOB-3G-VET"/>
+                            <constraint firstItem="nbn-rJ-dy9" firstAttribute="centerY" secondItem="efn-bW-2s0" secondAttribute="centerY" id="y1C-Tc-yLQ"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="detailDescriptionText" destination="fpL-E8-cvH" id="5Tb-Lk-93a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lfj-oO-WKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1232.8" y="106.59670164917542"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ort-d3-HZS">
@@ -69,4 +108,7 @@
             <point key="canvasLocation" x="-726" y="108"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CatchLogo" width="398" height="174"/>
+    </resources>
 </document>
