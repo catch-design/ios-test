@@ -1,22 +1,21 @@
 # iOS Developer Test
 
 A simple test for iOS Developers
+Name: Nandika Weerasuriya
 
 ## Instructions
 
-1. Fork or clone this repo
-2. Create an iOS project
-3. Use the design located in the design folder
-4. Make the app load the json file remotely from this repo (i.e. `https://raw.githubusercontent.com/catchnz/ios-test/master/data/data.json`) as per the design
-5. Display the data as per the design
-6. Create a pull request or email us at dev@catch.co.nz
+1. Download / Clone this repo
+2. Open the "Catch.xcworkspace" file in Catch folder
+3. Simply Build and Run
 
-### Guidelines
+### Notes
 
-1. Your repo needs to include at minimum anything required to get the app working.  Detailed instructions should be provided in the `README.md` file to setup and run the app.
-2. Let us know how long you spent on it
+1. Test cases are implemented
+2. Dependencies are used
+3. Time Taken Roughly 2-3 hours in total
 
-### Bonus Points
+### Used Dependencies
 
-* Consume dependencies with tools like cocoapods
-* Unit tests
+1.Alamofire
+2.For Testing : Quick, Nimble, Mockingjay
