@@ -27,7 +27,7 @@ enum Router: URLRequestConvertible {
         }
     }
 
-    // MARK: URLRequestConvertible
+    // MARK: - URLRequestConvertible
 
     func asURLRequest() throws -> URLRequest {
         let url = try NetworkingConstants.baseURL.asURL()

@@ -15,6 +15,8 @@ class ListViewController: UIViewController {
     
     private var data: [DataModel] = []
     private let tableViewYOffset: CGFloat = 20
+    private let refreshControl = UIRefreshControl()
+    private var customRefreshControl: CustomRefreshControl!
 
     // MARK: - Lifecycle
 
@@ -46,18 +48,26 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = .clear
         refreshControl.addTarget(self, action: #selector(ListViewController.loadData), for: .valueChanged)
         tableView.refreshControl = refreshControl
+
+        customRefreshControl = CustomRefreshControl(frame: refreshControl.bounds)
+        refreshControl.addSubview(customRefreshControl)
     }
 
     // MARK: - Networking
 
     @objc private func loadData() {
+        customRefreshControl.beginRefreshing()
+        
         NetworkingService.getDataArray { [weak self] data in
             self?.data = data
             self?.tableView.reloadData()
             self?.tableView.refreshControl?.endRefreshing()
+
+            self?.refreshControl.endRefreshing()
+            self?.customRefreshControl.endRefreshing()
         }
     }
 
@@ -100,15 +110,14 @@ extension ListViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = -scrollView.contentOffset.y
         if offset > tableViewYOffset {
+            let progress = (offset - self.tableViewYOffset) / 100
+            self.view.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .darkGray, progress: progress)
+
             logoTopConstraint.constant = offset
             UIView.animate(withDuration: 0.1) {
                 self.view.setNeedsLayout()
-                //if !self.data.isEmpty {
-                    let progress = (offset - self.tableViewYOffset) / 100
-                    self.view.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .gray, progress: progress)
-                //}
             }
         }
-
     }
+    
 }

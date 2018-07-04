@@ -23,7 +23,7 @@ extension UIColor {
         self.init(red:red, green:green, blue:blue, alpha:alpha)
     }
 
-    // Handy color transition methods form:
+    // Handy color transition methods from:
     // https://stackoverflow.com/questions/15757872/manually-color-fading-from-one-uicolor-to-another
     // MARK: - UIColor+Percentage
 
@@ -68,6 +68,7 @@ extension UIColor {
 // MARK: -
 
 extension UIColor {
+    static let darkGray = UIColor(hex: 0x666666)
     static let midGrey = UIColor(hex: 0x979797)
     static let navBarGrey = UIColor(hex: 0xFAFAFA, alpha: 0.9)
 }
