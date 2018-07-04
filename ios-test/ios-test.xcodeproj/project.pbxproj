@@ -23,6 +23,8 @@
 		05C176C620EC65CD00645684 /* DataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176C420EC65CD00645684 /* DataTableViewCell.xib */; };
 		05C176C820EC7D8D00645684 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176C720EC7D8D00645684 /* UIColor.swift */; };
 		05C176CA20EC881E00645684 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176C920EC881E00645684 /* Theme.swift */; };
+		05C176CD20EC8C6300645684 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176CB20EC8C6300645684 /* ListViewController.swift */; };
+		05C176CE20EC8C6300645684 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176CC20EC8C6300645684 /* ListViewController.xib */; };
 		4977CDDCD77367D1422B54AC /* Pods_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A3920D21475E323A84C662 /* Pods_ios_test.framework */; };
 		E57FA0AA5D958D8527EEB9AD /* Pods_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		05C176C420EC65CD00645684 /* DataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DataTableViewCell.xib; sourceTree = "<group>"; };
 		05C176C720EC7D8D00645684 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		05C176C920EC881E00645684 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		05C176CB20EC8C6300645684 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		05C176CC20EC8C6300645684 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		1C61288D2BFCAEE2191A3789 /* Pods-ios-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50F87678E78BD3CE0C2C2A1B /* Pods-ios-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +142,8 @@
 				05C176B120EC5F7600645684 /* ListTableViewController.xib */,
 				05C176B420EC5F9A00645684 /* DetailViewController.swift */,
 				05C176B520EC5F9A00645684 /* DetailViewController.xib */,
+				05C176CB20EC8C6300645684 /* ListViewController.swift */,
+				05C176CC20EC8C6300645684 /* ListViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 			files = (
 				05C176C620EC65CD00645684 /* DataTableViewCell.xib in Resources */,
 				05C1769920EC5CEC00645684 /* LaunchScreen.storyboard in Resources */,
+				05C176CE20EC8C6300645684 /* ListViewController.xib in Resources */,
 				05C1769620EC5CEC00645684 /* Assets.xcassets in Resources */,
 				05C176B320EC5F7600645684 /* ListTableViewController.xib in Resources */,
 				05C176B720EC5F9A00645684 /* DetailViewController.xib in Resources */,
@@ -407,6 +414,7 @@
 				05C176BD20EC624A00645684 /* Router.swift in Sources */,
 				05C1768F20EC5CEC00645684 /* AppDelegate.swift in Sources */,
 				05C176C820EC7D8D00645684 /* UIColor.swift in Sources */,
+				05C176CD20EC8C6300645684 /* ListViewController.swift in Sources */,
 				05C176B220EC5F7600645684 /* ListTableViewController.swift in Sources */,
 				05C176C220EC64EE00645684 /* NetworkingService.swift in Sources */,
 				05C176CA20EC881E00645684 /* Theme.swift in Sources */,

@@ -14,8 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+        // Set the root view controller manually since we are not using storyboards.
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: ListTableViewController())
+        window?.rootViewController = UINavigationController(rootViewController: ListViewController())
         window?.makeKeyAndVisible()
 
         Theme.applyTheming()

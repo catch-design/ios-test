@@ -1,5 +1,5 @@
 //
-//  ListTableViewController.swift
+//  ListViewController.swift
 //  ios-test
 //
 //  Created by Dean Woodward on 4/07/18.
@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ListTableViewController: UITableViewController {
+class ListViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var logoTopConstraint: NSLayoutConstraint!
+    
     private var data: [DataModel] = []
+    private let tableViewYOffset: CGFloat = 20
 
     // MARK: - Lifecycle
-        
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -39,21 +43,12 @@ class ListTableViewController: UITableViewController {
 
         tableView.rowHeight = 60
         tableView.separatorStyle = .none
+        tableView.dataSource = self
+        tableView.delegate = self
 
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(ListTableViewController.loadData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(ListViewController.loadData), for: .valueChanged)
         tableView.refreshControl = refreshControl
-
-        let logoImageView = UIImageView(image: UIImage(named: "CatchLogo"))
-        logoImageView.contentMode = .center
-        logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.addSubview(logoImageView)
-        //tableView.sendSubview(toBack: tableView)
-        //tableView.layer.insertSublayer(logoImageView.layer, at: 0)
-        logoImageView.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
-        logoImageView.centerYAnchor.constraint(equalTo: tableView.centerYAnchor).isActive = true
-        //logoImageView.layer.insertSublayer(<#T##layer: CALayer##CALayer#>, below: <#T##CALayer?#>)
-        //tableView.layer.insertSublayer(logoImageView.layer, at: 0)
     }
 
     // MARK: - Networking
@@ -66,32 +61,54 @@ class ListTableViewController: UITableViewController {
         }
     }
 
+}
+
+extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DataTableViewCell.cellReuseIdentifier, for: indexPath) as! DataTableViewCell
         let dataModel = data[indexPath.row]
         cell.configure(with: dataModel)
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // Get DataModel at row and set on DetailViewController before pushing.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        // Set data on detail view controller
         let detailViewController = DetailViewController()
         let dataModel = data[indexPath.row]
         detailViewController.dataModel = dataModel
 
         navigationController?.pushViewController(detailViewController, animated: true)
     }
+}
 
+extension ListViewController: UIScrollViewDelegate {
+
+    // Scroll the Catch logo if pulling down, and transition the views background color.
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = -scrollView.contentOffset.y
+        if offset > tableViewYOffset {
+            logoTopConstraint.constant = offset
+            UIView.animate(withDuration: 0.1) {
+                self.view.setNeedsLayout()
+                //if !self.data.isEmpty {
+                    let progress = (offset - self.tableViewYOffset) / 100
+                    self.view.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .gray, progress: progress)
+                //}
+            }
+        }
+
+    }
 }
