@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="ios_test" customModuleProvider="target">
+            <connections>
+                <outlet property="textView" destination="Sxs-3x-VwY" id="eRT-TY-eEq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CatchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="qNd-SC-Qrd">
+                    <rect key="frame" x="103" y="308" width="168" height="50"/>
+                </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-3x-VwY">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" red="0.82734555006027222" green="0.82748502492904663" blue="0.82732707262039185" alpha="0.94881742294520544" colorSpace="custom" customColorSpace="sRGB"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="qNd-SC-Qrd" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Kt-iF-dUT"/>
+                <constraint firstItem="Sxs-3x-VwY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HEi-GP-5rP"/>
+                <constraint firstItem="Sxs-3x-VwY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="USZ-02-Tro"/>
+                <constraint firstItem="qNd-SC-Qrd" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="YCd-f2-xvo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Sxs-3x-VwY" secondAttribute="bottom" id="vq7-O9-bGq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sxs-3x-VwY" secondAttribute="trailing" id="yda-ha-mhC"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="CatchLogo" width="168" height="50"/>
+    </resources>
+</document>
