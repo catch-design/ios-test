@@ -61,14 +61,21 @@ class ListViewController: UIViewController {
         customRefreshControl.beginRefreshing()
 
         NetworkingService.getDataArray { [weak self] dataResponse in
+            guard let strongSelf = self else {
+                return
+            }
             switch dataResponse.result {
             case .success(let data):
-                self?.data = data
-                self?.tableView.reloadData()
-                self?.customRefreshControl.endRefreshing()
+                strongSelf.data = data
+                strongSelf.customRefreshControl.endRefreshing()
+
+                // Fade the reload in.
+                UIView.transition(with: strongSelf.tableView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    strongSelf.tableView.reloadData()
+                }, completion: nil)
             case .failure(let error):
-                self?.customRefreshControl.endRefreshing()
-                self?.showSimpleAlert(error: error)
+                strongSelf.customRefreshControl.endRefreshing()
+                strongSelf.showSimpleAlert(error: error)
             }
         }
     }
