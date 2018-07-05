@@ -28,6 +28,9 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+
+        // Make sure the textview clears the nav bar on iOS 10.
+        edgesForExtendedLayout = []
     }
 
     // MARK: - View helpers

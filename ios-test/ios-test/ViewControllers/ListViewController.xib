@@ -26,13 +26,13 @@
                     <rect key="frame" x="103" y="308.5" width="168" height="50"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k4l-Ru-lQQ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="k4l-Ru-lQQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WGS-dE-3Gq"/>
+                <constraint firstItem="k4l-Ru-lQQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="WGS-dE-3Gq"/>
                 <constraint firstItem="1gE-Xu-Zfb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fO6-BR-myh"/>
                 <constraint firstItem="k4l-Ru-lQQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hdf-K6-L5e"/>
                 <constraint firstItem="k4l-Ru-lQQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="m5A-yi-KF7"/>
