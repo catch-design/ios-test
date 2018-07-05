@@ -36,8 +36,7 @@ class DetailViewController: UIViewController {
         textView.isEditable = false
         textView.layer.borderWidth = 1.0
         textView.layer.borderColor = UIColor.midGrey.cgColor
-        //24 /10
-        textView.textContainer.lineFragmentPadding = 10.0
+        textView.textContainerInset = UIEdgeInsets(top: 24, left: 10, bottom: 24, right: 10)
     }
 
     private func configure(with data: DataModel) {

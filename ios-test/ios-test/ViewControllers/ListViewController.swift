@@ -15,7 +15,6 @@ class ListViewController: UIViewController {
     
     private var data: [DataModel] = []
     private let tableViewYOffset: CGFloat = 20
-    private let refreshControl = UIRefreshControl()
     private var customRefreshControl: CustomRefreshControl!
 
     // MARK: - Lifecycle
@@ -48,13 +47,12 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
+        let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .clear
         refreshControl.backgroundColor = .darkGray
         refreshControl.addTarget(self, action: #selector(ListViewController.loadData), for: .valueChanged)
         tableView.refreshControl = refreshControl
-
-        customRefreshControl = CustomRefreshControl(frame: refreshControl.bounds)
-        refreshControl.addSubview(customRefreshControl)
+        customRefreshControl = CustomRefreshControl(refreshControl: refreshControl)
     }
 
     // MARK: - Networking
@@ -67,10 +65,8 @@ class ListViewController: UIViewController {
             case .success(let data):
                 self?.data = data
                 self?.tableView.reloadData()
-                self?.refreshControl.endRefreshing()
                 self?.customRefreshControl.endRefreshing()
             case .failure(let error):
-                self?.refreshControl.endRefreshing()
                 self?.customRefreshControl.endRefreshing()
                 self?.showSimpleAlert(error: error)
             }

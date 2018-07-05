@@ -15,6 +15,12 @@ class CustomRefreshControl: UIView {
 
     var isRefreshing = false
 
+    private weak var refreshControl: UIRefreshControl?
+    private let endRefreshScale: CGFloat = 0.3
+    private let timeInterval: TimeInterval = 0.3
+
+    // MARK: - Initialisers
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -25,31 +31,56 @@ class CustomRefreshControl: UIView {
         fatalError("Init with coder not implemented")
     }
 
+    // Initialise with a standard refresh control.
+    convenience init(refreshControl: UIRefreshControl) {
+        self.init(frame: refreshControl.bounds)
+        refreshControl.addSubview(self)
+        imageView.isHidden = true
+        imageView.alpha = 0.0
+        self.refreshControl = refreshControl
+    }
+
+    // MARK: Private
+
     private func commonInit() {
         Bundle.main.loadNibNamed("CustomRefreshControl", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        imageView.isHidden = true
     }
 
+    // MARK: - Refresh start / stop
+
     func beginRefreshing() {
-        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-        rotateAnimation.fromValue = 0.0
-        rotateAnimation.toValue = CGFloat(Double.pi * 2)
-        rotateAnimation.isRemovedOnCompletion = false
-        rotateAnimation.duration = 1
-        rotateAnimation.repeatCount = Float.infinity
-        imageView.layer.add(rotateAnimation, forKey: nil)
+        refreshControl?.beginRefreshing()
         imageView.isHidden = false
-        isRefreshing = true
+        imageView.transform = CGAffineTransform(scaleX: endRefreshScale, y: endRefreshScale)
+        imageView.rotate()
+        UIView.animate(withDuration: timeInterval, animations: {
+            self.imageView.alpha = 1.0
+            self.imageView.transform = CGAffineTransform.identity
+        },
+        completion: {_ in
+            self.imageView.isHidden = false
+            self.isRefreshing = true
+        })
     }
 
     func endRefreshing() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {[weak self] in
-            self?.imageView.layer.removeAllAnimations()
-            self?.imageView.isHidden = true
-            self?.isRefreshing = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {[weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            UIView.animate(withDuration: strongSelf.timeInterval, animations: {
+                strongSelf.imageView.alpha = 0.0
+                strongSelf.imageView.transform = CGAffineTransform(scaleX: strongSelf.endRefreshScale, y: strongSelf.endRefreshScale)
+            },
+            completion: {_ in
+                strongSelf.imageView.stopAnimating()
+                strongSelf.imageView.isHidden = true
+                strongSelf.isRefreshing = false
+                strongSelf.refreshControl?.endRefreshing()
+            })
         }
     }
 

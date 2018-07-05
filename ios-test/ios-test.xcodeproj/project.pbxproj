@@ -10,8 +10,6 @@
 		05C1768F20EC5CEC00645684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1768E20EC5CEC00645684 /* AppDelegate.swift */; };
 		05C1769620EC5CEC00645684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C1769520EC5CEC00645684 /* Assets.xcassets */; };
 		05C1769920EC5CEC00645684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C1769720EC5CEC00645684 /* LaunchScreen.storyboard */; };
-		05C176B220EC5F7600645684 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176B020EC5F7600645684 /* ListTableViewController.swift */; };
-		05C176B320EC5F7600645684 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176B120EC5F7600645684 /* ListTableViewController.xib */; };
 		05C176B620EC5F9A00645684 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176B420EC5F9A00645684 /* DetailViewController.swift */; };
 		05C176B720EC5F9A00645684 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176B520EC5F9A00645684 /* DetailViewController.xib */; };
 		05C176BA20EC600200645684 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176B920EC600200645684 /* DataModel.swift */; };
@@ -29,6 +27,7 @@
 		05C176D520ED8DA400645684 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C176D420ED8DA400645684 /* data.json */; };
 		05C176D820ED8DE300645684 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176D720ED8DE300645684 /* DataModelTests.swift */; };
 		05C176DA20ED9C3600645684 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176D920ED9C3600645684 /* UIViewController.swift */; };
+		05C176DC20EDA57700645684 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176DB20EDA57700645684 /* UIView.swift */; };
 		4977CDDCD77367D1422B54AC /* Pods_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A3920D21475E323A84C662 /* Pods_ios_test.framework */; };
 		E57FA0AA5D958D8527EEB9AD /* Pods_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -51,8 +50,6 @@
 		05C1769A20EC5CEC00645684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C1769F20EC5CEC00645684 /* ios-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C176A520EC5CEC00645684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05C176B020EC5F7600645684 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-		05C176B120EC5F7600645684 /* ListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
 		05C176B420EC5F9A00645684 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		05C176B520EC5F9A00645684 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		05C176B920EC600200645684 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
@@ -70,6 +67,7 @@
 		05C176D420ED8DA400645684 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		05C176D720ED8DE300645684 /* DataModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
 		05C176D920ED9C3600645684 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		05C176DB20EDA57700645684 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		1C61288D2BFCAEE2191A3789 /* Pods-ios-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50F87678E78BD3CE0C2C2A1B /* Pods-ios-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,8 +145,6 @@
 		05C176AE20EC5EF000645684 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				05C176B020EC5F7600645684 /* ListTableViewController.swift */,
-				05C176B120EC5F7600645684 /* ListTableViewController.xib */,
 				05C176B420EC5F9A00645684 /* DetailViewController.swift */,
 				05C176B520EC5F9A00645684 /* DetailViewController.xib */,
 				05C176CB20EC8C6300645684 /* ListViewController.swift */,
@@ -160,10 +156,10 @@
 		05C176AF20EC5EF800645684 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				05C176C320EC65CD00645684 /* DataTableViewCell.swift */,
-				05C176C420EC65CD00645684 /* DataTableViewCell.xib */,
 				05C176CF20ECA69E00645684 /* CustomRefreshControl.swift */,
 				05C176D120ECA8BE00645684 /* CustomRefreshControl.xib */,
+				05C176C320EC65CD00645684 /* DataTableViewCell.swift */,
+				05C176C420EC65CD00645684 /* DataTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +188,7 @@
 				05C176C920EC881E00645684 /* Theme.swift */,
 				05C176C720EC7D8D00645684 /* UIColor.swift */,
 				05C176D920ED9C3600645684 /* UIViewController.swift */,
+				05C176DB20EDA57700645684 /* UIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -326,7 +323,6 @@
 				05C176CE20EC8C6300645684 /* ListViewController.xib in Resources */,
 				05C176D220ECA8BE00645684 /* CustomRefreshControl.xib in Resources */,
 				05C1769620EC5CEC00645684 /* Assets.xcassets in Resources */,
-				05C176B320EC5F7600645684 /* ListTableViewController.xib in Resources */,
 				05C176B720EC5F9A00645684 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C176DC20EDA57700645684 /* UIView.swift in Sources */,
 				05C176B620EC5F9A00645684 /* DetailViewController.swift in Sources */,
 				05C176BA20EC600200645684 /* DataModel.swift in Sources */,
 				05C176BD20EC624A00645684 /* Router.swift in Sources */,
@@ -447,7 +444,6 @@
 				05C176C820EC7D8D00645684 /* UIColor.swift in Sources */,
 				05C176CD20EC8C6300645684 /* ListViewController.swift in Sources */,
 				05C176DA20ED9C3600645684 /* UIViewController.swift in Sources */,
-				05C176B220EC5F7600645684 /* ListTableViewController.swift in Sources */,
 				05C176C220EC64EE00645684 /* NetworkingService.swift in Sources */,
 				05C176CA20EC881E00645684 /* Theme.swift in Sources */,
 				05C176C020EC634300645684 /* Constants.swift in Sources */,
