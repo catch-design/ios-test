@@ -10,7 +10,6 @@
 		05C1768F20EC5CEC00645684 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C1768E20EC5CEC00645684 /* AppDelegate.swift */; };
 		05C1769620EC5CEC00645684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C1769520EC5CEC00645684 /* Assets.xcassets */; };
 		05C1769920EC5CEC00645684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05C1769720EC5CEC00645684 /* LaunchScreen.storyboard */; };
-		05C176A420EC5CEC00645684 /* ios_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176A320EC5CEC00645684 /* ios_testTests.swift */; };
 		05C176B220EC5F7600645684 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176B020EC5F7600645684 /* ListTableViewController.swift */; };
 		05C176B320EC5F7600645684 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176B120EC5F7600645684 /* ListTableViewController.xib */; };
 		05C176B620EC5F9A00645684 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176B420EC5F9A00645684 /* DetailViewController.swift */; };
@@ -27,6 +26,9 @@
 		05C176CE20EC8C6300645684 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176CC20EC8C6300645684 /* ListViewController.xib */; };
 		05C176D020ECA69E00645684 /* CustomRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176CF20ECA69E00645684 /* CustomRefreshControl.swift */; };
 		05C176D220ECA8BE00645684 /* CustomRefreshControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C176D120ECA8BE00645684 /* CustomRefreshControl.xib */; };
+		05C176D520ED8DA400645684 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 05C176D420ED8DA400645684 /* data.json */; };
+		05C176D820ED8DE300645684 /* DataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176D720ED8DE300645684 /* DataModelTests.swift */; };
+		05C176DA20ED9C3600645684 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C176D920ED9C3600645684 /* UIViewController.swift */; };
 		4977CDDCD77367D1422B54AC /* Pods_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A3920D21475E323A84C662 /* Pods_ios_test.framework */; };
 		E57FA0AA5D958D8527EEB9AD /* Pods_ios_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +50,6 @@
 		05C1769820EC5CEC00645684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05C1769A20EC5CEC00645684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C1769F20EC5CEC00645684 /* ios-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		05C176A320EC5CEC00645684 /* ios_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_testTests.swift; sourceTree = "<group>"; };
 		05C176A520EC5CEC00645684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C176B020EC5F7600645684 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		05C176B120EC5F7600645684 /* ListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
@@ -66,6 +67,9 @@
 		05C176CC20EC8C6300645684 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		05C176CF20ECA69E00645684 /* CustomRefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshControl.swift; sourceTree = "<group>"; };
 		05C176D120ECA8BE00645684 /* CustomRefreshControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomRefreshControl.xib; sourceTree = "<group>"; };
+		05C176D420ED8DA400645684 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		05C176D720ED8DE300645684 /* DataModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModelTests.swift; sourceTree = "<group>"; };
+		05C176D920ED9C3600645684 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		1C61288D2BFCAEE2191A3789 /* Pods-ios-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.debug.xcconfig"; sourceTree = "<group>"; };
 		50F87678E78BD3CE0C2C2A1B /* Pods-ios-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-testTests/Pods-ios-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		64D4AC0FEA342596B2E1DF0B /* Pods_ios_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,7 +137,8 @@
 		05C176A220EC5CEC00645684 /* ios-testTests */ = {
 			isa = PBXGroup;
 			children = (
-				05C176A320EC5CEC00645684 /* ios_testTests.swift */,
+				05C176D620ED8DE300645684 /* Models */,
+				05C176D320ED8DA400645684 /* Stubs */,
 				05C176A520EC5CEC00645684 /* Info.plist */,
 			);
 			path = "ios-testTests";
@@ -174,8 +179,8 @@
 		05C176BB20EC620B00645684 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				05C176BC20EC624A00645684 /* Router.swift */,
 				05C176C120EC64EE00645684 /* NetworkingService.swift */,
+				05C176BC20EC624A00645684 /* Router.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -184,10 +189,27 @@
 			isa = PBXGroup;
 			children = (
 				05C176BF20EC634300645684 /* Constants.swift */,
-				05C176C720EC7D8D00645684 /* UIColor.swift */,
 				05C176C920EC881E00645684 /* Theme.swift */,
+				05C176C720EC7D8D00645684 /* UIColor.swift */,
+				05C176D920ED9C3600645684 /* UIViewController.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		05C176D320ED8DA400645684 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				05C176D420ED8DA400645684 /* data.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		05C176D620ED8DE300645684 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05C176D720ED8DE300645684 /* DataModelTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		8EBAA5C2B9586A4881FD9138 /* Frameworks */ = {
@@ -313,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05C176D520ED8DA400645684 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +446,7 @@
 				05C176D020ECA69E00645684 /* CustomRefreshControl.swift in Sources */,
 				05C176C820EC7D8D00645684 /* UIColor.swift in Sources */,
 				05C176CD20EC8C6300645684 /* ListViewController.swift in Sources */,
+				05C176DA20ED9C3600645684 /* UIViewController.swift in Sources */,
 				05C176B220EC5F7600645684 /* ListTableViewController.swift in Sources */,
 				05C176C220EC64EE00645684 /* NetworkingService.swift in Sources */,
 				05C176CA20EC881E00645684 /* Theme.swift in Sources */,
@@ -435,7 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05C176A420EC5CEC00645684 /* ios_testTests.swift in Sources */,
+				05C176D820ED8DE300645684 /* DataModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

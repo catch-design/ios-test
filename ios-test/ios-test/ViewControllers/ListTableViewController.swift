@@ -59,11 +59,11 @@ class ListTableViewController: UITableViewController {
     // MARK: - Networking
 
     @objc private func loadData() {
-        NetworkingService.getDataArray { [weak self] data in
-            self?.data = data
-            self?.tableView.reloadData()
-            self?.tableView.refreshControl?.endRefreshing()
-        }
+//        NetworkingService.getDataArray { [weak self] data in
+//            self?.data = data
+//            self?.tableView.reloadData()
+//            self?.tableView.refreshControl?.endRefreshing()
+//        }
     }
 
     // MARK: - Table view data source

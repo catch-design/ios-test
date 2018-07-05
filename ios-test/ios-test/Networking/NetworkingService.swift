@@ -12,16 +12,11 @@ import AlamofireObjectMapper
 
 struct NetworkingService {
 
-    static func getDataArray(_ completion: @escaping ([DataModel]) -> ()) -> Void {
+    static func getDataArray(_ completion: @escaping (DataResponse<[DataModel]>) -> ()) -> Void {
         Alamofire.request(Router.getData)
-            .validate(statusCode: 200..<300)
+            .validate()
             .responseArray { (response: DataResponse<[DataModel]>) in
-                switch response.result {
-                case .success(let data):
-                    completion(data)
-                case .failure(let error):
-                    print(error)
-                }
-        }
+                completion(response)
+            }
     }
 }

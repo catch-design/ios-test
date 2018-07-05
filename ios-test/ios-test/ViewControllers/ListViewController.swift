@@ -49,6 +49,7 @@ class ListViewController: UIViewController {
         tableView.delegate = self
 
         refreshControl.tintColor = .clear
+        refreshControl.backgroundColor = .darkGray
         refreshControl.addTarget(self, action: #selector(ListViewController.loadData), for: .valueChanged)
         tableView.refreshControl = refreshControl
 
@@ -60,22 +61,27 @@ class ListViewController: UIViewController {
 
     @objc private func loadData() {
         customRefreshControl.beginRefreshing()
-        
-        NetworkingService.getDataArray { [weak self] data in
-            self?.data = data
-            self?.tableView.reloadData()
-            self?.tableView.refreshControl?.endRefreshing()
 
-            self?.refreshControl.endRefreshing()
-            self?.customRefreshControl.endRefreshing()
+        NetworkingService.getDataArray { [weak self] dataResponse in
+            switch dataResponse.result {
+            case .success(let data):
+                self?.data = data
+                self?.tableView.reloadData()
+                self?.refreshControl.endRefreshing()
+                self?.customRefreshControl.endRefreshing()
+            case .failure(let error):
+                self?.refreshControl.endRefreshing()
+                self?.customRefreshControl.endRefreshing()
+                self?.showSimpleAlert(error: error)
+            }
         }
     }
 
 }
 
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+// MARK: - UITableViewDataSource
 
-    // MARK: - Table view data source
+extension ListViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -91,6 +97,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(with: dataModel)
         return cell
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension ListViewController: UITableViewDelegate {
 
     // Get DataModel at row and set on DetailViewController before pushing.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -106,12 +117,13 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ListViewController: UIScrollViewDelegate {
 
-    // Scroll the Catch logo if pulling down, and transition the views background color.
+    // Scroll the Catch logo to match the tableView if pulling down.
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = -scrollView.contentOffset.y
         if offset > tableViewYOffset {
-            let progress = (offset - self.tableViewYOffset) / 100
-            self.view.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .darkGray, progress: progress)
+            //let progress = (offset - self.tableViewYOffset) / 100
+            //self.view.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .darkGray, progress: progress)
+            //self.refreshControl.backgroundColor = UIColor.transitionColor(fromColor: .black, toColor: .darkGray, progress: progress)
 
             logoTopConstraint.constant = offset
             UIView.animate(withDuration: 0.1) {
