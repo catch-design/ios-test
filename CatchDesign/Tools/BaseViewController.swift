@@ -15,6 +15,18 @@ class BaseViewController: UIViewController {
         ErrorManager.trackOpenView(className: className)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.Black.tone3
-
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.Black.tone1 ?? .black]
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        if #available(iOS 13.0, *) {
+            return .darkContent
+        } else {
+            return .default
+        }
     }
 }
