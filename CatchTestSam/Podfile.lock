@@ -1,0 +1,20 @@
+PODS:
+  - Refreshable (1.2.0)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Refreshable
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Refreshable
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Refreshable: 0f76b6d198178e6cd2823a553fbf4e84a3dba527
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 5b1a3ec72c82c0f5a7932417afa8c1904c9d1df6
+
+COCOAPODS: 1.8.4
