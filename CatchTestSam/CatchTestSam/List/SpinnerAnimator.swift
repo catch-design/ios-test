@@ -14,14 +14,17 @@ class SpinnerAnimator: UIView, PullToRefreshDelegate
     var spinner : UIImageView!
 	var header : UIView!
 	
+	let backgroundBrightness = 0.4;
+	
 	override init(frame: CGRect) {
         super.init(frame: frame)
         autoresizingMask = .flexibleWidth
 		self.backgroundColor = .black;
 		
+		// The space above the Refresh Control is empty, so this view is prevent the table background from being visible.
 		let headerFrame = CGRect(x: 0, y: -1000, width: 2000, height: 1000);
 		header = UIView(frame: headerFrame);
-		self.header.backgroundColor = UIColor(white: 0.4, alpha: 1.0);
+		self.header.backgroundColor = UIColor(white: backgroundBrightness, alpha: 1.0);
 		addSubview(self.header);
 
 		self.spinner = UIImageView(image: UIImage(named: "Spinner"));
@@ -49,13 +52,12 @@ class SpinnerAnimator: UIView, PullToRefreshDelegate
 	
 	func pullToRefresh(_ view: PullToRefreshView, stateDidChange state: PullToRefreshState)
 	{
-		
-		//self.backgroundColor = .green;
 	}
 	
+	// Change the background color based on how far down it has been pulled.
 	func setColorFromDisplacement(offset: CGFloat, maxOffset: CGFloat)
 	{
-		let brightness = CGFloat((max(min(offset, maxOffset), 0) / maxOffset) * 0.4);
+		let brightness = CGFloat((max(min(offset, maxOffset), 0) / maxOffset) * backgroundBrightness);
 		self.backgroundColor = UIColor(white: brightness, alpha: 1.0);
 	}
 	
@@ -76,13 +78,14 @@ class SpinnerAnimator: UIView, PullToRefreshDelegate
             delay: Double(0.0),
 			options: UIView.AnimationOptions.curveLinear,
             animations: {
-                // Rotate the spinner by M_PI_2 = PI/2 = 90 degrees
+                // Rotate the spinner by PI/2 = 90 degrees
 				self.spinner.transform = self.spinner.transform.rotated(by: -.pi/2)
                 
             },
             completion: { finished in
 				if(!self.spinner.isHidden)
 				{
+					// Keep animating until it is hidden.
 					self.animateSpinner();
 				}
             }
