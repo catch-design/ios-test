@@ -17,9 +17,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
         navigationItem.title = modelTitle
         contentLabel.text = content
-    
     }
     
 
